@@ -1,0 +1,31 @@
+{
+  "name": "groupby",
+  "version": "1.0.0",
+  "description": "Function allows to group object in array via object keys",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf public/*",
+    "bundle:node": "babel src/groupBy.node.js -o public/groupBy.node.bundle.min.js && uglifyjs public/groupBy.node.bundle.min.js -o public/groupBy.node.bundle.min.js",
+    "bundle:web": "babel src/groupBy.js -o public/groupBy.bundle.min.js && uglifyjs public/groupBy.bundle.min.js -o public/groupBy.bundle.min.js",
+    "build:node": "npm run bundle:node",
+    "build:web": "npm run bundle:web"
+  },
+  "keywords": [
+    "groupBy"
+  ],
+  "author": "Mariusz Szlachta",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-transform-modules-umd": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "rimraf": "^2.6.2",
+    "uglify-js": "^3.4.9"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  }
+}
